@@ -1,31 +1,36 @@
-import 'package:flutter/services.dart';
-import 'package:audioplayers/audioplayers.dart';
+import 'package:sound_mode/sound_mode.dart';
+import 'package:sound_mode/utils/ringer_mode_statuses.dart';
 
 abstract class MosqueSoundControlStrategy {
-  void adjustVolume(AudioPlayer audioPlayer);
+  void adjustVolume(RingerModeStatus status);
 }
 
 class InMosqueSoundControlStrategy implements MosqueSoundControlStrategy {
   @override
-  void adjustVolume(AudioPlayer audioPlayer) {
-    audioPlayer.setVolume(0.0); // Silent in mosque
+  void adjustVolume(RingerModeStatus status) {
+    SoundMode.setSoundMode(RingerModeStatus.silent);
   }
 }
 
 class NormalSoundControlStrategy implements MosqueSoundControlStrategy {
   @override
-  void adjustVolume(AudioPlayer audioPlayer) {
-    audioPlayer.setVolume(100.0); // Normal volume level
+  void adjustVolume(RingerModeStatus status) {
+    SoundMode.setSoundMode(RingerModeStatus.normal);
   }
 }
 
 class MosqueSoundControl {
+  static final MosqueSoundControl _instance = MosqueSoundControl._internal();
+
+  factory MosqueSoundControl() {
+    return _instance;
+  }
+
+  MosqueSoundControl._internal();
   MosqueSoundControlStrategy? _strategy;
 
-  MosqueSoundControl(this._strategy);
-
-  void adjustSound(AudioPlayer audioPlayer) {
-    _strategy?.adjustVolume(audioPlayer);
+  void adjustSound(RingerModeStatus status) {
+    _strategy?.adjustVolume(RingerModeStatus.values[status.index]);
   }
 
   void setStrategy(MosqueSoundControlStrategy newStrategy) {

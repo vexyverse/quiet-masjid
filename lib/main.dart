@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiet_masjid/features/silence/services/view/silence.dart';
+import 'package:quiet_masjid/features/silence/view/silence.dart';
 
 void main() => runApp(const MyApp());
 

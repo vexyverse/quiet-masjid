@@ -24,15 +24,6 @@ mixin SilenceViewMixin on State<SilenceView> {
     }
   }
 
-// Handle Platform Exceptions for devices running above Android 6.0
-  Future<void> deneme() async {
-    try {
-      await SoundMode.setSoundMode(RingerModeStatus.silent);
-    } on PlatformException {
-      print('Please enable permissions required');
-    }
-  }
-
   Future<void> setSilenceMode(MosqueSoundControlStrategy strategy) async {
     setState(() {
       _strategy = strategy;

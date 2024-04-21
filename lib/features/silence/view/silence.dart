@@ -37,12 +37,6 @@ class _SilenceViewState extends State<SilenceView> with SilenceViewMixin {
               },
               child: const Text('Silence mode change'),
             ),
-            ElevatedButton(
-              onPressed: () async {
-                deneme();
-              },
-              child: const Text('deneme mode change'),
-            ),
           ],
         ),
       ),

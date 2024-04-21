@@ -1,4 +1,4 @@
-package com.vexyverse.quiet_masjid
+package com.vexyverse.quietmasjid
 
 import io.flutter.embedding.android.FlutterActivity
 

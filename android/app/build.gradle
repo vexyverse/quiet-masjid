@@ -23,7 +23,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace "com.vexyverse.quiet_masjid"
+    namespace "com.vexyverse.quietmasjid"
     compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 

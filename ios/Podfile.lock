@@ -1,28 +1,28 @@
 PODS:
-  - audioplayers_darwin (0.0.1):
-    - Flutter
   - Flutter (1.0.0)
-  - path_provider_foundation (0.0.1):
+  - Mute (0.6.1)
+  - sound_mode (0.0.1):
     - Flutter
-    - FlutterMacOS
+    - Mute (~> 0.6.0)
 
 DEPENDENCIES:
-  - audioplayers_darwin (from `.symlinks/plugins/audioplayers_darwin/ios`)
   - Flutter (from `Flutter`)
-  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - sound_mode (from `.symlinks/plugins/sound_mode/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Mute
 
 EXTERNAL SOURCES:
-  audioplayers_darwin:
-    :path: ".symlinks/plugins/audioplayers_darwin/ios"
   Flutter:
     :path: Flutter
-  path_provider_foundation:
-    :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  sound_mode:
+    :path: ".symlinks/plugins/sound_mode/ios"
 
 SPEC CHECKSUMS:
-  audioplayers_darwin: 877d9a4d06331c5c374595e46e16453ac7eafa40
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
+  Mute: 20135a96076f140cc82bfc8b810e2d6150d8ec7e
+  sound_mode: ef0072f20e7306c1c371984a443156e39be092d5
 
 PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
 

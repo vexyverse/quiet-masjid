@@ -1,6 +1,6 @@
 {
-    "name": "quiet_masjid",
-    "short_name": "quiet_masjid",
+    "name": "quietmasjid",
+    "short_name": "quietmasjid",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

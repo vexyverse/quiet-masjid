@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import "package:quiet_masjid/features/silence/services/silence.dart";
-import "package:quiet_masjid/features/silence/view/silence_mixin.dart";
+import "package:quietmasjid/features/silence/services/silence.dart";
+import "package:quietmasjid/features/silence/view/silence_mixin.dart";
 
 //test for silence mod
 class SilenceView extends StatefulWidget {

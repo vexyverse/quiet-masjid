@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:quiet_masjid/features/silence/view/silence.dart';
-import 'package:quiet_masjid/features/silence/services/silence.dart';
+import 'package:quietmasjid/features/silence/view/silence.dart';
+import 'package:quietmasjid/features/silence/services/silence.dart';
 import 'package:sound_mode/permission_handler.dart';
 import 'package:sound_mode/sound_mode.dart';
 import 'package:sound_mode/utils/ringer_mode_statuses.dart';

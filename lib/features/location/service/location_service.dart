@@ -3,19 +3,27 @@ import 'package:location/location.dart';
 import 'package:quietmasjid/product/cache/model/location_cache_model.dart';
 import 'package:quietmasjid/features/location/model/location_cache_model.dart';
 
-final class LocationService {
-  LocationService({required this.userCacheOperation});
+/// A service that provides location-related functionality.
+class LocationService {
+  /// Creates a new instance of [LocationService].
+  ///
+  /// The [userLocationCacheOperation] parameter must not be null.
+  LocationService({required this.userLocationCacheOperation});
 
+  /// Returns the current location.
   Future<LocationData> getLocation() async {
-    Location location = Location();
-    LocationData locationData = await location.getLocation();
+    final Location location = Location();
+    final LocationData locationData = await location.getLocation();
     return locationData;
   }
 
-  final HiveCacheOperation<LocationCacheModel> userCacheOperation;
-  //save location data
+  /// Saves the given [locationData] to the user's location cache.
   Future<void> saveLocation(LocationData locationData) async {
-    userCacheOperation.add(
-        LocationCacheModel(locationCache: LocationCache.fromMap(locationData)));
+    userLocationCacheOperation.add(
+      LocationCacheModel(locationCache: LocationCache.fromMap(locationData)),
+    );
   }
+
+  /// The cache operation for the user's location.
+  final HiveCacheOperation<LocationCacheModel> userLocationCacheOperation;
 }

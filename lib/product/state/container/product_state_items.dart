@@ -1,3 +1,4 @@
+import 'package:quietmasjid/features/location/service/location_service.dart';
 import 'package:quietmasjid/product/cache/product_cache.dart';
 import 'package:quietmasjid/product/network/manager/product_network_manager.dart';
 import 'package:quietmasjid/product/state/container/product_state_container.dart';
@@ -11,6 +12,9 @@ final class ProductStateItems {
 
   static ProductViewModel get productViewModel =>
       ProductContainer.read<ProductViewModel>();
+
+  static LocationService get locationService =>
+      ProductContainer.read<LocationService>();
 
   static ProductCache get productCache => ProductContainer.read<ProductCache>();
 }

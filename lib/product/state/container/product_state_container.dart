@@ -1,5 +1,7 @@
 import 'package:core/core.dart';
 import 'package:get_it/get_it.dart';
+import 'package:quietmasjid/features/location/service/location_service.dart';
+import 'package:quietmasjid/product/cache/model/location_cache_model.dart';
 import 'package:quietmasjid/product/cache/product_cache.dart';
 import 'package:quietmasjid/product/network/manager/product_network_manager.dart';
 
@@ -12,7 +14,10 @@ final class ProductContainer {
   static void setup() {
     _getIt
       ..registerSingleton(ProductCache(cacheManager: HiveCacheManager()))
-      ..registerSingleton<ProductNetworkManager>(ProductNetworkManager.base());
+      ..registerSingleton<ProductNetworkManager>(ProductNetworkManager.base())
+      ..registerSingleton<LocationService>(LocationService(
+          userLocationCacheOperation:
+              HiveCacheOperation<LocationCacheModel>()));
     // ..registerLazySingleton<ProductViewModel>(
     //   ProductViewModel.new,
     // );

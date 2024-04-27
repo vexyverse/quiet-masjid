@@ -1,9 +1,11 @@
 import 'package:core/core.dart';
 import 'package:get_it/get_it.dart';
+import 'package:quietmasjid/features/location/bloc/location_bloc.dart';
 import 'package:quietmasjid/features/location/service/location_service.dart';
 import 'package:quietmasjid/product/cache/model/location_cache_model.dart';
 import 'package:quietmasjid/product/cache/product_cache.dart';
 import 'package:quietmasjid/product/network/manager/product_network_manager.dart';
+import 'package:quietmasjid/product/state/viewmodel/product_viewmodel.dart';
 
 /// Product container for dependency injection
 final class ProductContainer {
@@ -16,11 +18,13 @@ final class ProductContainer {
       ..registerSingleton(ProductCache(cacheManager: HiveCacheManager()))
       ..registerSingleton<ProductNetworkManager>(ProductNetworkManager.base())
       ..registerSingleton<LocationService>(LocationService(
+          userLocationCacheOperation: HiveCacheOperation<LocationCacheModel>()))
+      ..registerLazySingleton(() => LocationBloc(LocationService(
           userLocationCacheOperation:
-              HiveCacheOperation<LocationCacheModel>()));
-    // ..registerLazySingleton<ProductViewModel>(
-    //   ProductViewModel.new,
-    // );
+              HiveCacheOperation<LocationCacheModel>())))
+      ..registerLazySingleton<ProductViewModel>(
+        ProductViewModel.new,
+      );
   }
 
   /// read your dependency item for [ProductContainer]

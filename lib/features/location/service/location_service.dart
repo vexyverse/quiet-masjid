@@ -11,7 +11,7 @@ class LocationService {
   LocationService({required this.userLocationCacheOperation});
 
   /// Returns the current location.
-  Future<LocationData> getLocation() async {
+  Future<LocationData> readLocation() async {
     final Location location = Location();
     final LocationData locationData = await location.getLocation();
     return locationData;
@@ -22,6 +22,12 @@ class LocationService {
     userLocationCacheOperation.add(
       LocationCacheModel(locationCache: LocationCache.fromMap(locationData)),
     );
+  }
+
+  Future<LocationCache?> readHiveFromCache() async {
+    final LocationCacheModel? locationCacheModel =
+        userLocationCacheOperation.get('cami');
+    return locationCacheModel?.locationCache;
   }
 
   /// The cache operation for the user's location.

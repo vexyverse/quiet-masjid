@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:location/location.dart';
+import 'package:geolocator/geolocator.dart';
 part 'location_cache_model.g.dart';
 
 @JsonSerializable()
@@ -19,7 +19,7 @@ class LocationCache with EquatableMixin {
     this.speed,
   });
 
-  factory LocationCache.fromMap(LocationData latLng) {
+  factory LocationCache.fromMap(Position latLng) {
     return LocationCache(
         latitude: latLng.latitude, longitude: latLng.longitude);
   }

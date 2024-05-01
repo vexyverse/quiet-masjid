@@ -17,8 +17,8 @@ final class ProductContainer {
     _getIt
       ..registerSingleton(ProductCache(cacheManager: HiveCacheManager()))
       ..registerSingleton<ProductNetworkManager>(ProductNetworkManager.base())
-      ..registerSingleton<LocationService>(LocationService(
-          userLocationCacheOperation: HiveCacheOperation<LocationCacheModel>()))
+      /*..registerSingleton<LocationService>(LocationService(
+          userLocationCacheOperation: HiveCacheOperation<LocationCacheModel>()))*/
       // ..registerLazySingleton(() => LocationBloc(LocationService(
       //     userLocationCacheOperation:
       //         HiveCacheOperation<LocationCacheModel>())), )

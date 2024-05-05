@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:quietmasjid/features/location/view/location_mixin.dart';
 import 'package:quietmasjid/product/state/base/base_state.dart';
+import 'package:kartal/kartal.dart';
 
 class LocationView extends StatefulWidget {
   const LocationView({super.key});
@@ -16,9 +18,12 @@ class _LocationViewState extends BaseState<LocationView>
     return Scaffold(
       body: Column(
         children: [
+          Text(positionData?.latitude.toString() ?? " "),
+          Text(positionData?.longitude.toString() ?? " "),
+          Text(positionData?.altitude.toString() ?? ""),
           ElevatedButton(
               onPressed: () async {
-                final position = await determinePostion();
+                positionData = await determinePostion();
               },
               child: const Text('get location'))
         ],

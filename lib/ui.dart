@@ -58,7 +58,7 @@ class _UiState extends State<Ui> {
                 ),
                 SizedBox(
                   height: 50,
-                  width:250,
+                  width: 250,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quietmasjid/features/silence/view/silence.dart';
+import 'package:quietmasjid/ui.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,13 +8,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Material App Bar'),
-          ),
-          body: const SilenceView()),
+      home: Scaffold(body: Ui()),
     );
   }
 }

@@ -14,30 +14,51 @@ class _SilenceViewState extends State<SilenceView> with SilenceViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Silence',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+      body: Container(
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/resimler/resim.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              colors: [
+                Colors.black.withOpacity(0.5),
+                Colors.black.withOpacity(0.4),
+              ],
             ),
-            ElevatedButton(
-              onPressed: () async {
-                permissionCheckRequest();
-              },
-              child: const Text('Request Permission'),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(
+                  'Silence',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () async {
+                    permissionCheckRequest();
+                  },
+                  child: const Text('Request Permission'),
+                ),
+                ElevatedButton(
+                  onPressed: () async {
+                    setSilenceMode(InMosqueSoundControlStrategy());
+                  },
+                  child: const Text('Silence mode change'),
+                ),
+              ],
             ),
-            ElevatedButton(
-              onPressed: () async {
-                setSilenceMode(InMosqueSoundControlStrategy());
-              },
-              child: const Text('Silence mode change'),
-            ),
-          ],
+          ),
         ),
       ),
     );

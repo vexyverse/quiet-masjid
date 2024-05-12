@@ -1,0 +1,32 @@
+name: background_service
+description: My new Flutter plugin for background services
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: "^3.3.0"
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        default_package: background_service_android
+      ios:
+        default_package: background_service_ios
+
+dependencies:
+  flutter:
+    sdk: flutter
+  background_service_android:
+    path: ../background_service_android
+  background_service_ios:
+    path: ../background_service_ios
+  background_service_platform_interface:
+    path: ../background_service_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.3
+  plugin_platform_interface: ^2.1.8
+  very_good_analysis: ^5.1.0

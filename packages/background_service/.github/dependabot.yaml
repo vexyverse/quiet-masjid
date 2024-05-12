@@ -1,0 +1,27 @@
+version: 2
+enable-beta-ecosystems: true
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/background_service"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/background_service/example"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/background_service_platform_interface"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/background_service_android"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/background_service_ios"
+    schedule:
+      interval: "daily"

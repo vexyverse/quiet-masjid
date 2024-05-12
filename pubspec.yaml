@@ -29,8 +29,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   sound_mode: ^3.0.0
+  background_service:
+    path: packages/background_service/background_service
   core:
     path: packages/core
+
   equatable: ^2.0.5
   geolocator: ^11.0.0
   json_annotation: ^4.8.1
@@ -71,5 +74,3 @@ flutter_launcher_icons:
   image_path: "assets/app/app_icon.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
   remove_alpha_ios: true
-
-

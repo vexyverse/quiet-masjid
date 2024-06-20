@@ -16,7 +16,7 @@ class _UiState extends State<Ui> {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/resimler/resim.jpg"),
+            image: AssetImage("assets/pictures/wallpaper.jpg"),
             fit: BoxFit.cover,
           ),
         ),

@@ -34,7 +34,7 @@ class MosqueSoundControl {
       if (await Permission.notification.isGranted) {
         print('Permission granted.');
       } else {
-        print('Permission denied.');
+        await Permission.notification.request();
       }
     } on PlatformException catch (e) {
       _log('Failed to check permission: ${e.message}');

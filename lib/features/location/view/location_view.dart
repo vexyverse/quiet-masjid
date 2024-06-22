@@ -23,7 +23,7 @@ class _LocationViewState extends BaseState<LocationView>
           Text(positionData?.altitude.toString() ?? ""),
           ElevatedButton(
               onPressed: () async {
-                positionData = await determinePostion();
+                positionData = await determinePosition();
               },
               child: const Text('get location'))
         ],

@@ -10,7 +10,7 @@ mixin LocationViewMixin on BaseState<LocationView> {
       userLocationCacheOperation: HiveCacheOperation<LocationCacheModel>());
   Position? positionData;
 
-  Future<Position?> determinePostion() async {
+  Future<Position?> determinePosition() async {
     positionData = await locationService.determinePosition();
     setState(() {
       positionData = positionData;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quietmasjid/ui.dart';
+import 'package:quietmasjid/features/splash/view/splash_view.dart';
 import 'package:quietmasjid/product/init/config/app_environment.dart';
 import 'package:quietmasjid/product/state/container/product_state_container.dart';
 import 'package:quietmasjid/product/state/container/product_state_items.dart';
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: Scaffold(body: Ui()),
+      home: Scaffold(body: SplashScreen()),
     );
   }
 }

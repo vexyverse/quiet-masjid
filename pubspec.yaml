@@ -33,6 +33,7 @@ dependencies:
     path: packages/core
   equatable: ^2.0.5
   geolocator: ^11.0.0
+  permission_handler: ^11.3.1
   json_annotation: ^4.9.0
   flutter_bloc: ^8.1.5
   bloc: ^8.1.4

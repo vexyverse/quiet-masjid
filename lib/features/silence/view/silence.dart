@@ -18,7 +18,7 @@ class _SilenceViewState extends State<SilenceView> with SilenceViewMixin {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/resimler/resim.jpg"),
+            image: AssetImage("assets/pictures/wallpaper.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -52,7 +52,9 @@ class _SilenceViewState extends State<SilenceView> with SilenceViewMixin {
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    setSilenceMode(InMosqueSoundControlStrategy());
+                    MosqueSoundControlStrategy strategy =
+                        NormalSoundControlStrategy();
+                    await setSilenceMode(strategy);
                   },
                   child: const Text('Silence mode change'),
                 ),

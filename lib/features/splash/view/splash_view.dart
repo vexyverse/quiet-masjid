@@ -1,14 +1,26 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:quietmasjid/features/silence/view/silence.dart';
 
-class Ui extends StatefulWidget {
-  const Ui({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<Ui> createState() => _UiState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _UiState extends State<Ui> {
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const SilenceView()),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +48,7 @@ class _UiState extends State<Ui> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text(
-                  "Quiet masjid",
+                  "Quited masjid",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 50,
@@ -45,7 +57,7 @@ class _UiState extends State<Ui> {
                 ),
                 const SizedBox(height: 30),
                 const Text(
-                  "      The Quiet Masjid app helps people \n      "
+                  "      The Quited Masjid app helps people \n      "
                   "   get smartphones to mute when \n   "
                   "entering or coming to the masjid area.",
                   style: TextStyle(

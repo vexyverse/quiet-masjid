@@ -44,10 +44,7 @@ dependencies:
   go_router: ^14.0.2
   logger: ^2.2.0
   easy_localization: ^3.0.6
-  sound_mode:
-    git:
-      url: https://github.com/developersailor/sound_mode.git
-      ref: main
+  sound_mode: ^3.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:quietmasjid/features/location/view/location_mixin.dart';
 import 'package:quietmasjid/product/state/base/base_state.dart';
-import 'package:kartal/kartal.dart';
 
 class LocationView extends StatefulWidget {
   const LocationView({super.key});

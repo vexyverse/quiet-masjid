@@ -1,8 +1,6 @@
 import 'package:core/core.dart';
 import 'package:get_it/get_it.dart';
 
-import 'package:quietmasjid/features/location/service/location_service.dart';
-import 'package:quietmasjid/product/cache/model/location_cache_model.dart';
 import 'package:quietmasjid/product/cache/product_cache.dart';
 import 'package:quietmasjid/product/network/manager/product_network_manager.dart';
 import 'package:quietmasjid/product/state/viewmodel/product_viewmodel.dart';

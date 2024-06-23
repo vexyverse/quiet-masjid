@@ -1,17 +1,17 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:geolocator/geolocator.dart';
-part 'location_cache_model.g.dart';
+part 'location_special_model.g.dart';
 
 @JsonSerializable()
-class LocationCache with EquatableMixin {
+class LocationSpecial  with EquatableMixin {
   final double? latitude;
   final double? longitude;
   final String? address;
   final DateTime? timestamp;
   final double? speed;
 
-  LocationCache({
+  LocationSpecial({
     this.latitude,
     this.longitude,
     this.address,
@@ -19,19 +19,19 @@ class LocationCache with EquatableMixin {
     this.speed,
   });
 
-  factory LocationCache.fromMap(Position latLng) {
-    return LocationCache(
+  factory LocationSpecial.fromMap(Position latLng) {
+    return LocationSpecial(
         latitude: latLng.latitude, longitude: latLng.longitude);
   }
 
-  factory LocationCache.fromGpsData(Map<String, dynamic> gpsData) {
+  factory LocationSpecial.fromGpsData(Map<String, dynamic> gpsData) {
     final latitude = gpsData['latitude'] as double;
     final longitude = gpsData['longitude'] as double;
-    return LocationCache(latitude: latitude, longitude: longitude);
+    return LocationSpecial(latitude: latitude, longitude: longitude);
   }
-  factory LocationCache.fromJson(Map<String, dynamic> json) =>
-      _$LocationCacheFromJson(json);
-  Map<String, dynamic> toJson() => _$LocationCacheToJson(this);
+  factory LocationSpecial.fromJson(Map<String, dynamic> json) =>
+      _$LocationSpecialFromJson(json);
+  Map<String, dynamic> toJson() => _$LocationSpecialToJson(this);
   @override
   List<Object?> get props => [latitude, longitude, address, timestamp, speed];
 }

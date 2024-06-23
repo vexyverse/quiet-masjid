@@ -3,7 +3,8 @@ import 'package:core/src/cache/core/cache_model.dart';
 /// An abstract class representing a cache operation.
 ///
 /// This class defines the basic operations that can be performed on a cache,
-/// such as adding items, removing items, clearing the cache, and retrieving items.
+/// such as adding items, removing items,
+/// clearing the cache, and retrieving items.
 ///
 /// The type parameter `T` represents the type of the cache model.
 abstract class CacheOperation<T extends CacheModel> {

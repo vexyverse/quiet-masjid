@@ -11,6 +11,7 @@ final class ProductNetworkManager extends NetworkManager<EmptyModel> {
           options: BaseOptions(
             baseUrl: AppEnvironmentItems.baseUrl.value,
           ),
+
         );
 
   /// Handle error

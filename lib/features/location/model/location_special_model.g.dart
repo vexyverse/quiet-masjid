@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'location_cache_model.dart';
+part of 'location_special_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-LocationCache _$LocationCacheFromJson(Map<String, dynamic> json) =>
-    LocationCache(
+LocationSpecial _$LocationSpecialFromJson(Map<String, dynamic> json) =>
+    LocationSpecial(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       address: json['address'] as String?,
@@ -17,7 +17,7 @@ LocationCache _$LocationCacheFromJson(Map<String, dynamic> json) =>
       speed: (json['speed'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$LocationCacheToJson(LocationCache instance) =>
+Map<String, dynamic> _$LocationSpecialToJson(LocationSpecial instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,

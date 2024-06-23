@@ -1,14 +1,10 @@
-import 'package:core/core.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:quietmasjid/product/cache/model/location_cache_model.dart';
-import 'package:quietmasjid/features/location/model/location_cache_model.dart';
 
+import 'package:geolocator/geolocator.dart';
 /// A service that provides location-related functionality.
 class LocationService {
   /// Creates a new instance of [LocationService].
-  ///
-  /// The [userLocationCacheOperation] parameter must not be null.
-  LocationService({required this.userLocationCacheOperation});
+
+  const LocationService();
 
   /// Returns the current location.
   Future<Position> determinePosition() async {
@@ -48,18 +44,4 @@ class LocationService {
     return await Geolocator.getCurrentPosition();
   }
 
-  Future<void> saveLocation(Position position) async {
-    userLocationCacheOperation.add(
-      LocationCacheModel(locationCache: LocationCache.fromMap(position)),
-    );
-  }
-
-  Future<LocationCache?> readHiveFromCache() async {
-    final LocationCacheModel? locationCacheModel =
-        userLocationCacheOperation.get('cami');
-    return locationCacheModel?.locationCache;
-  }
-
-  /// The cache operation for the user's location.
-  final HiveCacheOperation<LocationCacheModel> userLocationCacheOperation;
 }

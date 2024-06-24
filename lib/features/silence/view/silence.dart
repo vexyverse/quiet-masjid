@@ -1,4 +1,3 @@
-import "package:background_fetch/background_fetch.dart";
 import "package:flutter/material.dart";
 import "package:quietmasjid/features/silence/services/silence.dart";
 import "package:quietmasjid/features/silence/view/silence_mixin.dart";
@@ -12,12 +11,6 @@ class SilenceView extends StatefulWidget {
 }
 
 class _SilenceViewState extends State<SilenceView> with SilenceViewMixin {
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-    BackgroundFetch.start();
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

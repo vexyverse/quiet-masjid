@@ -3,8 +3,6 @@ import 'package:quietmasjid/features/places/model/place.dart';
 import 'package:quietmasjid/product/env/prod_env.dart';
 import 'package:quietmasjid/product/network/manager/product_network_manager.dart';
 import 'package:quietmasjid/product/network/manager/product_network_path.dart';
-import 'package:quietmasjid/features/location/service/location_service.dart';
-import 'package:geolocator/geolocator.dart';
 import 'dart:math';
 
 class PlacesService {
@@ -12,45 +10,55 @@ class PlacesService {
 
   PlacesService(this._networkManager);
 
-  Future<String?> searchNearby({LocationSpecial? userLocation, num? radius}) async {
-    final response = await _networkManager
-        .get<Place>(ProductNetworkPath.searchNearby.path, queryParameters: {
-      "location": "${userLocation?.latitude},${userLocation?.longitude}",
-      "radius": radius,
-      "type": "mosque",
-      "key": ProdEnv().apiKey,
-    });
-    final data = response.data;
-    double? result;
-    if (data != null) {
-      final places = data.results;
-      for (int i = 0; i < places!.length; i++) {
-        var place = places[i];
-        final lat1 = place.geometry?.location?.lat;
-        final lon2 = place.geometry?.location?.lng;
-         result = haversine(
-            num.parse(userLocation!.latitude.toString()),
-            num.parse(userLocation.longitude.toString()),
-            num.parse(lat1.toString()),
-            num.parse(lon2.toString()));
-      }
-    }
-    return result?.toStringAsFixed(2);
-  }
+/// Searches for nearby places based on the user's location and a specified radius.
+///
+/// This method sends a GET request to the `searchNearby` endpoint of the `ProductNetworkManager` with the user's location and a specified radius as query parameters.
+/// The response from the server is then parsed into a `Place` object and returned.
+///
+/// [userLocation] The user's current location. This is an instance of `LocationSpecial` which contains the latitude and longitude of the user's location.
+/// [radius] The radius within which to search for nearby places. This is specified in kilometers.
+///
+/// Returns a `Future` that completes with a `Place` object if the server returns a valid response. If the server returns an error, the `Future` completes with `null`.
+Future<List<Result>?> searchNearby({LocationSpecial? userLocation, num? radius}) async {
+  final response = await _networkManager
+      .get<Place>(ProductNetworkPath.searchNearby.path, queryParameters: {
+    "location": "${userLocation?.latitude},${userLocation?.longitude}",
+    "radius": radius,
+    "type": "mosque",
+    "key": ProdEnv().apiKey,
+  });
+  final data = response.data;
+  return data?.results;
+}
 
-  double? haversine(num lat1, num lon1, num lat2, num lon2) {
-    const double? R = 6371.0; // Radius of the earth in km
+  /// Calculates the Haversine distance between two points on the Earth's surface.
+  ///
+  /// The Haversine formula calculates the shortest distance between two points on the surface of a sphere.
+  /// This method takes in the latitude and longitude of two points and returns the distance between them in kilometers.
+  ///
+  /// [lat1] Latitude of the first point.
+  /// [lon1] Longitude of the first point.
+  /// [lat2] Latitude of the second point.
+  /// [lon2] Longitude of the second point.
+  ///
+  /// Returns the Haversine distance between the two points in kilometers.
+  double haversine(num lat1, num lon1, num lat2, num lon2) {
+    const double R = 6371.0; // Radius of the earth in km
 
-    num? dlat = _degreesToRadians(lat2 - lat1);
-    num? dlon = _degreesToRadians(lon2 - lon1);
-    double? a = sin(dlat / 2.0) * sin(dlat / 2.0) +
+    // Convert the difference in coordinates to radians
+    num? differenceLat = _degreesToRadians(lat2 - lat1);
+    num? differenceLon = _degreesToRadians(lon2 - lon1);
+
+    // Apply the Haversine formula
+    double? a = sin(differenceLat / 2.0) * sin(differenceLat / 2.0) +
         cos(_degreesToRadians(lat1)) *
             cos(_degreesToRadians(lat2)) *
-            sin(dlon / 2) *
-            sin(dlon / 2);
+            sin(differenceLon / 2) *
+            sin(differenceLon / 2);
 
-    double? c = 2 * atan2(sqrt(a), sqrt(1 - a));
+    double c = 2 * atan2(sqrt(a), sqrt(1 - a));
 
+    // Convert the result to kilometers and return
     return R * c;
   }
 

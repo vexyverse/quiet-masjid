@@ -119,13 +119,13 @@ class Geometry extends INetworkModel<Geometry> {
 @JsonSerializable()
 class Location extends INetworkModel<Location> {
   @JsonKey(name: "lat")
-  final double? lat;
+   final double lat;
   @JsonKey(name: "lng")
-  final double? lng;
+   final double lng;
 
-  const Location({
-    this.lat,
-    this.lng,
+   const Location({
+   required this.lat,
+   required this.lng,
   });
 
   factory Location.fromJson(Map<String, dynamic> json) => _$LocationFromJson(json);

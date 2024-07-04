@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7424a515-2c8b-4ffc-8eef-8e705559f510" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/features/myapp/view/myapp.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/places/model/place.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/places/model/place.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/places/model/place.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/places/model/place.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/places/services/places_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/places/services/places_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/silence/view/silence.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/silence/view/silence.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/silence/view/silence_mixin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/silence/view/silence_mixin.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/splash/services/splash_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/myapp/service/myapp_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/splash/view/splash_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/splash/view/splash_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/widget_test.dart" afterDir="false" />
-    </list>
+    <list default="true" id="7424a515-2c8b-4ffc-8eef-8e705559f510" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,22 +48,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Flutter.main.dart.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "io.flutter.reload.alreadyRun": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/mehmetfiskindal/quiet_masjid",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Flutter.main.dart.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mehmetfiskindal/quiet_masjid&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\My Project\mescit_projesi\quiet_masjid\assets\resimler" />

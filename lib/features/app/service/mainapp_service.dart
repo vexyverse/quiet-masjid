@@ -7,14 +7,14 @@ import '../../../product/state/container/product_state_items.dart';
 import '../../location/model/location_special_model.dart';
 import '../../silence/services/silence.dart';
 
-class MyAppService {
+class MainAppService {
   final double proximityThreshold = 0.270; // Kilometre cinsinden
   Future<void> checkProximityToMosque() async {
     const LocationService locationService = LocationService();
     final Position position = await locationService.determinePosition();
 
     final PlacesService placesService =
-    PlacesService(ProductStateItems.productNetworkManager);
+        PlacesService(ProductStateItems.productNetworkManager);
     final mosques = await placesService.searchNearby(
       userLocation: LocationSpecial(
         latitude: position.latitude,
